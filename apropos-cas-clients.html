@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advisense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;800;900&family=Instrument+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&family=Urbanist:wght@900&family=Bodoni+Moda:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+<!-- 0. MEGA MENU -->
+<section data-screen-label="Mega menu" style="position:sticky;top:0;width:100%;z-index:50">
+    <nav style="position:relative;min-height:72px;background:#ffffff;border-bottom:1px solid #e7e3dd;display:flex;flex-wrap:wrap;align-items:center;padding:12px clamp(16px,4vw,32px);gap:16px;width:100%">
+      <a href="home.html" style="display:inline-flex;align-items:baseline;text-decoration:none;flex-shrink:0">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:28px;color:#F07030;line-height:1;margin-right:1px;position:relative;top:5px">"</span>
+        <span style="font-family:'Urbanist',sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.025em;color:#111111;line-height:1">advisense</span>
+      </a>
+      <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center;margin:0;padding:0">
+        <li data-menu-trigger="expertises" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Nos expertises <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="secteur" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Votre secteur <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="objectifs" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Vos objectifs <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="apropos" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">À propos <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;margin-left:auto">
+        <a href="apropos-notre-hub.html" style="display:inline-flex;align-items:center;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#1a1a1a;background:#ffffff;padding:10px 20px;border-radius:10px;border:1px solid #1a1a1a;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#ffffff;background:#F07030;padding:10px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:13px">Prendre contact <span>→</span></a>
+      </div>
+    </nav>
+
+    <div data-menu-zone data-menu-out style="position:absolute;top:72px;left:0;right:0;display:flex;justify-content:center;pointer-events:auto">
+
+      <div class="mega-panel" data-panel="expertises" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Trois piliers, présentés en trois cartes.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+            <a href="expertise-strategie-impact.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Stratégie &amp; Impact</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Clarifiez ce qui compte vraiment.</div>
+            </a>
+            <a href="expertise-mobilisation-engagement.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Mobilisation &amp; Engagement</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Fédérez ceux qui peuvent vous soutenir.</div>
+            </a>
+            <a href="expertise-digital-innovation.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Digital &amp; Innovation</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Concevez, construisez, accélérez.</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="secteur" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Trouvez l'accompagnement pensé pour votre contexte.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+            <a href="secteur-philanthropie.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Philanthropie &amp; Collecte</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Associations · Fondations · Acteurs de l'intérêt général</div>
+            </a>
+            <a href="secteur-corporate.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Corporate &amp; Business</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">PME &amp; ETI · Startups · Industrie · Santé &amp; Sciences</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="objectifs" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:920px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px;max-width:640px">Nous partons de votre besoin, pas de notre catalogue.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Lancer mon projet</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">De l'idée à la réalité.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Penser ma stratégie</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Clarifier cap et priorités.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Piloter ma transformation</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Réorganiser et transformer.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Trouver mes nouvelles ressources</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Sécuriser mes financements.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Augmenter ma visibilité</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Gagner en visibilité.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Mobiliser mes équipes</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Fédérer mes équipes.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Construire mon réseau de partenaires</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Construire des partenariats.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Intégrer l'IA à mon organisation</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Adopter l'IA utile.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="apropos" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Découvrir Advisense</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+            <a href="apropos-positionnement.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Notre positionnement</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Deux univers, une seule exigence.</span>
+            </a>
+            <a href="apropos-notre-hub.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Notre Hub</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Les experts qui portent vos missions.</span>
+            </a>
+            <a href="apropos-cas-clients.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Nos cas clients</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Des missions concrètes, des résultats mesurables.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- 1. HERO -->
+<section data-screen-label="Hero" style="position:relative;width:100%;min-height:clamp(480px,70vh,680px);background:#faf8f5;overflow:hidden">
+    <div class="img-slot" id="hero-bg" role="img" aria-label="Photo hero pleine largeur" style="position:absolute;inset:0;width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(26,26,26,0.62) 0%, rgba(26,26,26,0.32) 42%, rgba(26,26,26,0) 68%);pointer-events:none"></div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px);min-height:clamp(480px,70vh,680px);display:flex;flex-direction:column;justify-content:center;gap:24px">
+      <div style="max-width:600px;display:flex;flex-direction:column;gap:24px">
+      <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px;width:fit-content">Nos cas clients</span>
+      <h1 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(32px,5vw,52px);letter-spacing:-0.02em;line-height:1.1;color:#ffffff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,0.25)">Des missions concrètes. Des résultats mesurables.</h1>
+      <p style="font-family:'Instrument Sans',sans-serif;font-weight:400;font-size:18px;line-height:1.5;color:#ffffff;margin:0;max-width:520px;text-shadow:0 1px 12px rgba(0,0,0,0.3)">Des organisations — associatives comme privées — qui ont osé penser autrement. Voici ce que nous avons construit, ensemble.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:8px">
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:14px">Parlons de votre projet <span>→</span></a>
+        <a href="#" style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.6);transition:background 0.25s ease,border-color 0.25s ease" data-hover="background:rgba(255,255,255,0.26);border-color:#ffffff">Découvrir notre Hub</a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 8b. FICHE CAS CLIENT (carte unique complète) -->
+<section data-screen-label="Fiche cas client" style="background:#faf8f5;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="max-width:1000px;margin:0 auto;background:#ffffff;border-radius:24px;padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,48px);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <img src="images/logo_client_1.png" alt="Logo client" style="width:140px;height:auto;display:block">
+          <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;color:#1a1a1a;margin:0">Opération de Street Marketing</h2>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px">Cosmétique</span>
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px">Pharmacie</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px">Stratégie</span>
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px">Digital</span>
+            </div>
+          </div>
+        </div>
+        <div class="img-slot" role="img" aria-label="Photo cas client" style="width:100%;aspect-ratio:4/3;background:url('images/street-marketing.jpeg') center/cover no-repeat;border-radius:16px"></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;background:#faf8f5;border-radius:16px">
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>+22% de revenus</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">issus de l'organique</span>
+        </div>
+        <div style="width:1px;height:32px;background:#e7e3dd;flex-shrink:0"></div>
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>×2,4 de ventes</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">attribuées aux assistants et moteurs IA</span>
+        </div>
+        <div style="width:1px;height:32px;background:#e7e3dd;flex-shrink:0"></div>
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>+15% de conversion</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">sur les pages produits prioritaires</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Contexte</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">Le lancement d'une nouvelle gamme cosmétique en pharmacie peinait à trouver son public malgré un bon référencement produit. Le client cherchait un dispositif capable de créer un contact direct avec les consommateurs sur le point de vente, au-delà du digital.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Mission</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">Nous avons conçu et piloté une opération de street marketing coordonnée avec la stratégie digitale existante, en ciblant les zones de chalandise des pharmacies partenaires et en formant les équipes terrain au discours de marque.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Résultat</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">L'opération a généré un afflux mesurable en point de vente et renforcé la visibilité de la marque en ligne, avec des retombées directes sur les ventes dans les semaines suivant le lancement.</p>
+        </div>
+      </div>
+
+      <div>
+        <div style="background:#fbe9dd;border-radius:16px;padding:24px">
+          <p style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;line-height:1.5;color:#1a1a1a;margin:0"><span style="font-family:'Bodoni Moda',serif;font-weight:900;color:#F07030;font-size:24px;position:relative;top:3px;margin-right:2px">&quot;</span>Advisense a su transformer une simple opération terrain en véritable relais de notre stratégie digitale. Le résultat a dépassé nos attentes, sur le point de vente comme en ligne.</p>
+          <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#767370;margin-top:12px">Virginie Lacoste — Directrice Communication</span>
+        </div>
+      </div>
+
+      <div>
+        <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#767370;margin-bottom:10px">Expert Advisense</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;background:#1a1a1a;padding:5px 12px;border-radius:6px">Paul Caroly</span>
+          <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;background:#1a1a1a;padding:5px 12px;border-radius:6px">Jean-Antoine Tamet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 8b. FICHE CAS CLIENT (carte unique complète) -->
+<section data-screen-label="Fiche cas client" style="background:#faf8f5;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="max-width:1000px;margin:0 auto;background:#ffffff;border-radius:24px;padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,48px);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <img src="images/logo_client_1.png" alt="Logo client" style="width:140px;height:auto;display:block">
+          <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;color:#1a1a1a;margin:0">Opération de Street Marketing</h2>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px">Cosmétique</span>
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px">Pharmacie</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px">Stratégie</span>
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px">Digital</span>
+            </div>
+          </div>
+        </div>
+        <div class="img-slot" role="img" aria-label="Photo cas client" style="width:100%;aspect-ratio:4/3;background:url('images/street-marketing.jpeg') center/cover no-repeat;border-radius:16px"></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;background:#faf8f5;border-radius:16px">
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>+22% de revenus</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">issus de l'organique</span>
+        </div>
+        <div style="width:1px;height:32px;background:#e7e3dd;flex-shrink:0"></div>
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>×2,4 de ventes</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">attribuées aux assistants et moteurs IA</span>
+        </div>
+        <div style="width:1px;height:32px;background:#e7e3dd;flex-shrink:0"></div>
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>+15% de conversion</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">sur les pages produits prioritaires</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Contexte</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">Le lancement d'une nouvelle gamme cosmétique en pharmacie peinait à trouver son public malgré un bon référencement produit. Le client cherchait un dispositif capable de créer un contact direct avec les consommateurs sur le point de vente, au-delà du digital.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Mission</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">Nous avons conçu et piloté une opération de street marketing coordonnée avec la stratégie digitale existante, en ciblant les zones de chalandise des pharmacies partenaires et en formant les équipes terrain au discours de marque.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Résultat</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">L'opération a généré un afflux mesurable en point de vente et renforcé la visibilité de la marque en ligne, avec des retombées directes sur les ventes dans les semaines suivant le lancement.</p>
+        </div>
+      </div>
+
+      <div>
+        <div style="background:#fbe9dd;border-radius:16px;padding:24px">
+          <p style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;line-height:1.5;color:#1a1a1a;margin:0"><span style="font-family:'Bodoni Moda',serif;font-weight:900;color:#F07030;font-size:24px;position:relative;top:3px;margin-right:2px">&quot;</span>Advisense a su transformer une simple opération terrain en véritable relais de notre stratégie digitale. Le résultat a dépassé nos attentes, sur le point de vente comme en ligne.</p>
+          <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#767370;margin-top:12px">Virginie Lacoste — Directrice Communication</span>
+        </div>
+      </div>
+
+      <div>
+        <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#767370;margin-bottom:10px">Expert Advisense</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;background:#1a1a1a;padding:5px 12px;border-radius:6px">Paul Caroly</span>
+          <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;background:#1a1a1a;padding:5px 12px;border-radius:6px">Jean-Antoine Tamet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 8b. FICHE CAS CLIENT (carte unique complète) -->
+<section data-screen-label="Fiche cas client" style="background:#faf8f5;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="max-width:1000px;margin:0 auto;background:#ffffff;border-radius:24px;padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,48px);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <img src="images/logo_client_1.png" alt="Logo client" style="width:140px;height:auto;display:block">
+          <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;color:#1a1a1a;margin:0">Opération de Street Marketing</h2>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px">Cosmétique</span>
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px">Pharmacie</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px">Stratégie</span>
+              <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px">Digital</span>
+            </div>
+          </div>
+        </div>
+        <div class="img-slot" role="img" aria-label="Photo cas client" style="width:100%;aspect-ratio:4/3;background:url('images/street-marketing.jpeg') center/cover no-repeat;border-radius:16px"></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;background:#faf8f5;border-radius:16px">
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>+22% de revenus</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">issus de l'organique</span>
+        </div>
+        <div style="width:1px;height:32px;background:#e7e3dd;flex-shrink:0"></div>
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>×2,4 de ventes</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">attribuées aux assistants et moteurs IA</span>
+        </div>
+        <div style="width:1px;height:32px;background:#e7e3dd;flex-shrink:0"></div>
+        <div style="flex:1;min-width:200px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:22px;color:#1a1a1a"><span style="color:#3c8a55;font-size:16px;margin-right:4px">▲</span>+15% de conversion</span>
+          <span style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#767370">sur les pages produits prioritaires</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Contexte</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">Le lancement d'une nouvelle gamme cosmétique en pharmacie peinait à trouver son public malgré un bon référencement produit. Le client cherchait un dispositif capable de créer un contact direct avec les consommateurs sur le point de vente, au-delà du digital.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Mission</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">Nous avons conçu et piloté une opération de street marketing coordonnée avec la stratégie digitale existante, en ciblant les zones de chalandise des pharmacies partenaires et en formant les équipes terrain au discours de marque.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Résultat</h3>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#404040;margin:0">L'opération a généré un afflux mesurable en point de vente et renforcé la visibilité de la marque en ligne, avec des retombées directes sur les ventes dans les semaines suivant le lancement.</p>
+        </div>
+      </div>
+
+      <div>
+        <div style="background:#fbe9dd;border-radius:16px;padding:24px">
+          <p style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;line-height:1.5;color:#1a1a1a;margin:0"><span style="font-family:'Bodoni Moda',serif;font-weight:900;color:#F07030;font-size:24px;position:relative;top:3px;margin-right:2px">&quot;</span>Advisense a su transformer une simple opération terrain en véritable relais de notre stratégie digitale. Le résultat a dépassé nos attentes, sur le point de vente comme en ligne.</p>
+          <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#767370;margin-top:12px">Virginie Lacoste — Directrice Communication</span>
+        </div>
+      </div>
+
+      <div>
+        <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#767370;margin-bottom:10px">Expert Advisense</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;background:#1a1a1a;padding:5px 12px;border-radius:6px">Paul Caroly</span>
+          <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;background:#1a1a1a;padding:5px 12px;border-radius:6px">Jean-Antoine Tamet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 9. FOOTER -->
+<footer data-screen-label="Footer" style="background:#faf8f5;padding:80px 0 0;border-top:1px solid #e7e3dd">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div style="display:inline-flex;align-items:baseline;font-family:'Urbanist',sans-serif;font-weight:900;font-size:clamp(56px,14vw,120px);letter-spacing:-0.025em;line-height:1;margin-bottom:56px">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:clamp(64px,16vw,140px);color:#F07030;line-height:1;position:relative;top:24px;margin-right:2px">"</span>
+        <span style="display:inline-block;background:linear-gradient(180deg,#1a1a1a 0%,rgba(26,26,26,0.08) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">advisense</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;padding-bottom:56px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Nos expertises</span>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Stratégie &amp; Impact</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Mobilisation &amp; Engagement</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Digital &amp; Innovation</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:32px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Votre secteur</span>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Philanthropie &amp; Collecte</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Corporate &amp; Business</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">À propos</span>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Notre positionnement</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Notre Hub</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Nos cas clients</a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Contactez-nous</span>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">LinkedIn</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Calendly</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Email</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;background:transparent;color:#1a1a1a;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #1a1a1a;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+          <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:12px">Parlons de votre projet <span>→</span></a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e7e3dd;padding:24px 0">
+        <span style="font-size:13px;color:#767370">© 2026 Advisense, Inc. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  canvas2 = null;
+  raf2 = null;
+  state = { activePanel: null };
+  closeTimer = null;
+
+  openPanel(id) {
+    clearTimeout(this.closeTimer);
+    this.setState({ activePanel: id });
+  }
+  scheduleClose() {
+    this.closeTimer = setTimeout(() => this.setState({ activePanel: null }), 150);
+  }
+  cancelClose() {
+    clearTimeout(this.closeTimer);
+  }
+
+  noise2(x, y) {
+    const s = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+    const fx = Math.floor(x), fy = Math.floor(y);
+    const smooth = (a, b, t) => a + (b - a) * (t * t * (3 - 2 * t));
+    const corner = (ix, iy) => {
+      const v = Math.sin(ix * 12.9898 + iy * 78.233) * 43758.5453;
+      return v - Math.floor(v);
+    };
+    const tx = x - fx, ty = y - fy;
+    const top = smooth(corner(fx, fy), corner(fx + 1, fy), tx);
+    const bot = smooth(corner(fx, fy + 1), corner(fx + 1, fy + 1), tx);
+    return smooth(top, bot, ty) * 2 - 1;
+  }
+
+  initWave(canvas, bgFill, colors, rafKey) {
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const parent = canvas.parentElement;
+    let w = parent.clientWidth, h = parent.clientHeight;
+    canvas.width = w; canvas.height = h;
+    let nt = 0;
+    const speed = 0.0005;
+    const drawWave = (n) => {
+      for (let i = 0; i < n; i++) {
+        ctx.beginPath();
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = colors[i % colors.length];
+        const baseY = h * 0.5;
+        for (let x = 0; x < w; x += 6) {
+          const y = Math.sin(x / 220 + nt * 30 + i * 0.35) * 70
+                  + Math.sin(x / 90 + nt * 50 - i * 0.5) * 25
+                  + this.noise2(x / 300, nt * 12 + i) * 14;
+          if (x === 0) ctx.moveTo(x, y + baseY); else ctx.lineTo(x, y + baseY);
+        }
+        ctx.stroke();
+        ctx.closePath();
+      }
+    };
+    const render = () => {
+      nt += speed;
+      ctx.fillStyle = bgFill;
+      ctx.globalAlpha = 1;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalAlpha = 0.85;
+      drawWave(5);
+      this[rafKey] = requestAnimationFrame(render);
+    };
+    render();
+    const onResize = () => { w = parent.clientWidth; h = parent.clientHeight; canvas.width = w; canvas.height = h; };
+    window.addEventListener('resize', onResize);
+    this['_onResize_' + rafKey] = onResize;
+  }
+
+  componentDidMount() {
+    this.initWave(this.canvas2, '#ffffff', ['#F07030', '#d85a1e', '#F58A3C', '#e8b287', '#c9541b'], 'raf2');
+  }
+
+  componentWillUnmount() {
+    if (this.raf2) cancelAnimationFrame(this.raf2);
+    if (this._onResize_raf2) window.removeEventListener('resize', this._onResize_raf2);
+  }
+
+  renderVals() {
+    const active = this.state.activePanel;
+    const tab = (id) => ({
+      active: active === id,
+      color: active === id ? '#1a1a1a' : '#767370',
+      bg: active === id ? '#faf8f5' : 'transparent',
+      chev: active === id ? 'rotate(180deg)' : 'rotate(0deg)',
+    });
+    const t1 = tab('expertises'), t2 = tab('secteur'), t3 = tab('objectifs'), t4 = tab('apropos');
+    return {
+      canvasRef2: (el) => { this.canvas2 = el; },
+      openExpertises: () => this.openPanel('expertises'),
+      openSecteur: () => this.openPanel('secteur'),
+      openObjectifs: () => this.openPanel('objectifs'),
+      openApropos: () => this.openPanel('apropos'),
+      scheduleClose: () => this.scheduleClose(),
+      cancelClose: () => this.cancelClose(),
+      isExpertisesActive: t1.active,
+      isSecteurActive: t2.active,
+      isObjectifsActive: t3.active,
+      isAproposActive: t4.active,
+      expertisesColor: t1.color, expertisesBg: t1.bg, expertisesChevRotate: t1.chev,
+      secteurColor: t2.color, secteurBg: t2.bg, secteurChevRotate: t2.chev,
+      objectifsColor: t3.color, objectifsBg: t3.bg, objectifsChevRotate: t3.chev,
+      aproposColor: t4.color, aproposBg: t4.bg, aproposChevRotate: t4.chev,
+      wrapPointerEvents: active ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

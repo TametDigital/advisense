@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advisense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;800;900&family=Instrument+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&family=Urbanist:wght@900&family=Bodoni+Moda:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+<!-- 0. MEGA MENU -->
+<section data-screen-label="Mega menu" style="position:sticky;top:0;width:100%;z-index:50">
+    <nav style="position:relative;min-height:72px;background:#ffffff;border-bottom:1px solid #e7e3dd;display:flex;flex-wrap:wrap;align-items:center;padding:12px clamp(16px,4vw,32px);gap:16px;width:100%">
+      <a href="home.html" style="display:inline-flex;align-items:baseline;text-decoration:none;flex-shrink:0">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:28px;color:#F07030;line-height:1;margin-right:1px;position:relative;top:5px">"</span>
+        <span style="font-family:'Urbanist',sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.025em;color:#111111;line-height:1">advisense</span>
+      </a>
+      <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center;margin:0;padding:0">
+        <li data-menu-trigger="expertises" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Nos expertises <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="secteur" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Votre secteur <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="objectifs" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Vos objectifs <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="apropos" data-menu-out style="position:relative">
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">À propos <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;margin-left:auto">
+        <a href="apropos-notre-hub.html" style="display:inline-flex;align-items:center;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#1a1a1a;background:#ffffff;padding:10px 20px;border-radius:10px;border:1px solid #1a1a1a;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#ffffff;background:#F07030;padding:10px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:13px">Prendre contact <span>→</span></a>
+      </div>
+    </nav>
+
+    <div data-menu-zone data-menu-out style="position:absolute;top:72px;left:0;right:0;display:flex;justify-content:center;pointer-events:auto">
+
+      <div class="mega-panel" data-panel="expertises" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Trois piliers, présentés en trois cartes.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+            <a href="expertise-strategie-impact.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Stratégie &amp; Impact</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Clarifiez ce qui compte vraiment.</div>
+            </a>
+            <a href="expertise-mobilisation-engagement.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Mobilisation &amp; Engagement</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Fédérez ceux qui peuvent vous soutenir.</div>
+            </a>
+            <a href="expertise-digital-innovation.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Digital &amp; Innovation</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Concevez, construisez, accélérez.</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="secteur" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Trouvez l'accompagnement pensé pour votre contexte.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+            <a href="secteur-philanthropie.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Philanthropie &amp; Collecte</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Associations · Fondations · Acteurs de l'intérêt général</div>
+            </a>
+            <a href="secteur-corporate.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Corporate &amp; Business</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">PME &amp; ETI · Startups · Industrie · Santé &amp; Sciences</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="objectifs" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:920px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px;max-width:640px">Nous partons de votre besoin, pas de notre catalogue.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Lancer mon projet</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">De l'idée à la réalité.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Penser ma stratégie</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Clarifier cap et priorités.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Piloter ma transformation</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Réorganiser et transformer.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Trouver mes nouvelles ressources</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Sécuriser mes financements.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Augmenter ma visibilité</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Gagner en visibilité.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Mobiliser mes équipes</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Fédérer mes équipes.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Construire mon réseau de partenaires</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Construire des partenariats.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Intégrer l'IA à mon organisation</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Adopter l'IA utile.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="apropos" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Découvrir Advisense</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+            <a href="apropos-positionnement.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Notre positionnement</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Deux univers, une seule exigence.</span>
+            </a>
+            <a href="apropos-notre-hub.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Notre Hub</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Les experts qui portent vos missions.</span>
+            </a>
+            <a href="apropos-cas-clients.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Nos cas clients</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Des missions concrètes, des résultats mesurables.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- 1. HERO -->
+<section data-screen-label="Hero" style="position:relative;width:100%;min-height:clamp(480px,70vh,680px);background:#faf8f5;overflow:hidden">
+    <div class="img-slot" id="hero-bg" role="img" aria-label="Photo hero pleine largeur" style="position:absolute;inset:0;width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(26,26,26,0.62) 0%, rgba(26,26,26,0.32) 42%, rgba(26,26,26,0) 68%);pointer-events:none"></div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px);min-height:clamp(480px,70vh,680px);display:flex;flex-direction:column;justify-content:center;gap:24px">
+      <div style="max-width:600px;display:flex;flex-direction:column;gap:24px">
+      <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px;width:fit-content">Notre positionnement</span>
+      <h1 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(32px,5vw,52px);letter-spacing:-0.02em;line-height:1.1;color:#ffffff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,0.25)">Un accompagnement pour tous les entrepreneurs. Business ou intérêt général. Même exigence, même méthode.</h1>
+      <p style="font-family:'Instrument Sans',sans-serif;font-weight:400;font-size:18px;line-height:1.5;color:#ffffff;margin:0;max-width:520px;text-shadow:0 1px 12px rgba(0,0,0,0.3)">Stratégie. Digital. Impact. Vous payez le travail, pas la structure.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:8px">
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:14px">Parler à un expert <span>→</span></a>
+        <a href="#" style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.6);transition:background 0.25s ease,border-color 0.25s ease" data-hover="background:rgba(255,255,255,0.26);border-color:#ffffff">Découvrir notre approche</a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 2c. BANDEAU TROIS CARDS — Nos trois qualités -->
+<section data-screen-label="Bandeau trois cards qualites" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div style="border-right:1px solid #e7e3dd;padding:32px 32px 32px 0;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030">01</span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Exigeants.</h3>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Sur les profils que nous intégrons, sur la qualité des livrables, sur la clarté des recommandations. Nous ne diluons pas, nous ne sur-promettons pas.</p>
+      </div>
+      <div style="border-right:1px solid #e7e3dd;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030">02</span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Engagés.</h3>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Dans la mission du client, pas en prestataire externe qui optimise ses heures. Un expert Advisense prend parti, défend des positions, dit ce qu'il pense vraiment.</p>
+      </div>
+      <div style="padding:32px 0 32px 32px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030">03</span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Expérimentés.</h3>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Pas au sens scolaire — au sens d'avoir traversé des situations difficiles, décidé sous pression, vu des projets réussir et d'autres échouer. Cette expérience ne s'enseigne pas.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- 4. BANDEAU ENCART TEXTE + IMAGE (DROITE) -->
+<section data-screen-label="Bandeau encart texte-image droite" style="background:#faf8f5;padding:clamp(48px,8vw,96px) 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,64px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030">Notre positionnement</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;line-height:1.25;color:#1a1a1a;margin:0;margin-top:-10px">Deux univers. Une seule exigence.</h2>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#404040;margin:0">Nous accompagnons à la fois des entreprises et des organisations à but non lucratif, en tirant parti de ce qui fonctionne dans chacun de ces univers pour renforcer l'autre.
+        Le monde associatif mérite le même niveau d'expertise que les grandes entreprises — sans en payer le prix ni en subir les travers. Et les entreprises ont tout à gagner à s'inspirer de la rigueur et de l'engagement du monde associatif. Advisense est né de cette conviction&nbsp;: créer un pont concret entre ces deux mondes, mission après mission.</p>
+      </div>
+      <div class="img-slot" id="split-img" role="img" aria-label="Photo produit / usage" style="width:100%;aspect-ratio:4/3;background:url('assets/photo-2.jpeg') center/cover no-repeat;border-radius:16px"></div>
+    </div>
+  </section>
+
+<!-- 10c. BANDEAU CITATION (fond sombre, annotée : chapeau + corps) -->
+<section data-screen-label="Bandeau citation sombre annotee" style="position:relative;min-height:40vh;display:flex;align-items:center;justify-content:center;padding:clamp(72px,12vw,120px) clamp(16px,4vw,32px);overflow:hidden;background:#1a1a1a">
+    <div style="position:relative;z-index:1;max-width:760px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px">
+      <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(20px,2.6vw,26px);line-height:1.4;color:#ffffff;margin:0">La qualité d'un conseil se mesure à l'expérience de celui qui le donne.</h2>
+      <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:clamp(60px,8vw,96px);color:#F07030;line-height:1">&quot;</span>
+      <p style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(22px,3vw,28px);line-height:1.4;color:#ffffff;margin:0;margin-top:4px">Les meilleures décisions se prennent quand celui qui conseille a lui-même porté des responsabilités.</p>
+      <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Paul Caroly — CEO</span>
+      <p style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75);margin:0;margin-top:8px">Pas de théorie. Pas de frameworks génériques. Des experts qui ont déjà été de l'autre côté de la table — qui ont dirigé, tenu des budgets, managé des équipes, connu la réussite comme l'échec. Cet expert ne conseille pas comme un consultant formé en école puis en agence&nbsp;: il voit ce que l'autre ne voit pas, et il dit ce que l'autre n'ose pas dire.</p>
+    </div>
+  </section>
+
+<!-- 4b. BANDEAU ENCART TEXTE + IMAGE (GAUCHE) -->
+<section data-screen-label="Bandeau encart texte-image gauche" style="background:#faf8f5;padding:clamp(48px,8vw,96px) 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,64px);align-items:center">
+      <div class="img-slot" id="split-img-2" role="img" aria-label="Photo produit / usage" style="width:100%;aspect-ratio:4/3;background:url('assets/photo-3.jpeg') center/cover no-repeat;border-radius:16px"></div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030">Notre promesse</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;line-height:1.25;color:#1a1a1a;margin:0;margin-top:-10px">Du concret. Pas du discours.</h2>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#404040;margin:0">Un accompagnement conçu pour avancer vraiment&nbsp;: clarifier la stratégie, activer les bons leviers digitaux, générer un impact réel.
+        Avec Advisense, vous travaillez directement avec des profils dirigeants — sans payer une agence. Vous n'avez pas à choisir entre la qualité et le budget, ni entre le conseil et l'exécution. Votre interlocuteur devient un membre temporaire mais pleinement engagé de votre équipe&nbsp;: il porte votre mission de la première conversation au dernier livrable.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- 2d. BANDEAU TROIS CARDS — Nos trois leviers -->
+<section data-screen-label="Bandeau trois cards leviers" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(26px,4.5vw,36px);letter-spacing:-0.02em;color:#1a1a1a;margin:0 0 48px">Trois leviers. Un seul objectif&nbsp;: faire avancer.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div style="border-right:1px solid #e7e3dd;padding:32px 32px 32px 0;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030">01</span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Stratégie</h3>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Donner une direction claire et actionnable.</p>
+      </div>
+      <div style="border-right:1px solid #e7e3dd;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030">02</span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Digital</h3>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Accélérer, structurer, simplifier. L'IA utilisée comme un levier pragmatique et opérationnel, jamais comme un effet de mode.</p>
+      </div>
+      <div style="padding:32px 0 32px 32px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030">03</span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Impact</h3>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Créer de la valeur durable, économique ou sociétale.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- 12. BANDEAU LISTE COMPACTE — Notre modèle -->
+<section data-screen-label="Liste compacte notre modele" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(26px,4.5vw,36px);letter-spacing:-0.02em;color:#1a1a1a;margin:0 0 20px">Un modèle simple. Et juste.</h2>
+    <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#404040;margin:0 0 40px;max-width:800px">Porté par une communauté de consultants expérimentés, engagés et opérationnels, notre modèle en réseau délivre un accompagnement de haut niveau, au juste prix. Pas de structure lourde, pas de coûts cachés.
+    Sans locaux à amortir ni équipe permanente à financer, l'intégralité de votre budget va à ce qui compte&nbsp;: l'expertise et le travail, pas la structure. Et selon les situations, la TVA peut ne pas s'appliquer — un avantage concret pour les associations.</p>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0">
+      <li style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030;flex-shrink:0">01</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Des profils hors normes.</strong> Ex-directeurs généraux, ex-DG de fondations, ex-CEO. Des praticiens qui ont tenu des postes et des budgets, pas des consultants théoriques.</span>
+      </li>
+      <li style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030;flex-shrink:0">02</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Du brief à l'exécution, sans filtre.</strong> Celui que vous rencontrez est celui qui travaille. Pas de junior en back-office, pas de bait-and-switch.</span>
+      </li>
+      <li style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030;flex-shrink:0">03</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Un modèle sans frais de structure.</strong> Le budget du client va à l'expertise, pas à l'overhead.</span>
+      </li>
+      <li style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030;flex-shrink:0">04</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Une double culture, par choix.</strong> Nous travaillons autant avec le privé qu'avec le monde associatif — par conviction, pour faire circuler pratiques, modèles et réseaux dans les deux sens.</span>
+      </li>
+      <li style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd;border-bottom:1px solid #e7e3dd">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:#F07030;flex-shrink:0">05</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Du sur-mesure, pas un catalogue.</strong> Chaque mission commence par une écoute longue et se construit pour une organisation — jamais adaptée d'un template vendu cent fois.</span>
+      </li>
+    </ul>
+  </section>
+
+<!-- 9. BLOC DISTINCTIF — Ce que nous ne sommes pas -->
+<section data-screen-label="Bloc distinctif" style="background:#faf8f5;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="color:#F07030;font-weight:700;font-size:18px;flex-shrink:0">✕</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Pas une agence</strong> — avec ses directeurs de clientèle, ses chefs de projet intermédiaires et ses marges prises sur des sous-traitants anonymes.</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="color:#F07030;font-weight:700;font-size:18px;flex-shrink:0">✕</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Pas un cabinet</strong> — avec ses associés en vitrine, ses analystes en salle et ses méthodologies vendues comme universelles.</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd">
+        <span style="color:#F07030;font-weight:700;font-size:18px;flex-shrink:0">✕</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Pas des spécialistes du seul monde associatif</strong> — déconnectés des standards d'exécution et des pratiques managériales du privé.</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-top:1px solid #e7e3dd;border-bottom:1px solid #e7e3dd">
+        <span style="color:#F07030;font-weight:700;font-size:18px;flex-shrink:0">✕</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a"><strong style="font-weight:700">Pas des consultants qui conseillent</strong> sans avoir jamais eu à rendre de comptes sur leurs décisions.</span>
+      </div>
+    </div>
+  </section>
+
+<!-- 9. FOOTER -->
+<footer data-screen-label="Footer" style="background:#faf8f5;padding:80px 0 0;border-top:1px solid #e7e3dd">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div style="display:inline-flex;align-items:baseline;font-family:'Urbanist',sans-serif;font-weight:900;font-size:clamp(56px,14vw,120px);letter-spacing:-0.025em;line-height:1;margin-bottom:56px">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:clamp(64px,16vw,140px);color:#F07030;line-height:1;position:relative;top:24px;margin-right:2px">"</span>
+        <span style="display:inline-block;background:linear-gradient(180deg,#1a1a1a 0%,rgba(26,26,26,0.08) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">advisense</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;padding-bottom:56px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Nos expertises</span>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Stratégie &amp; Impact</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Mobilisation &amp; Engagement</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Digital &amp; Innovation</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:32px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Votre secteur</span>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Philanthropie &amp; Collecte</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Corporate &amp; Business</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">À propos</span>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Notre positionnement</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Notre Hub</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Nos cas clients</a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Contactez-nous</span>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">LinkedIn</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Calendly</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Email</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;background:transparent;color:#1a1a1a;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #1a1a1a;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+          <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:12px">Parlons de votre projet <span>→</span></a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e7e3dd;padding:24px 0">
+        <span style="font-size:13px;color:#767370">© 2026 Advisense, Inc. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  canvas2 = null;
+  raf2 = null;
+  state = { activePanel: null };
+  closeTimer = null;
+
+  openPanel(id) {
+    clearTimeout(this.closeTimer);
+    this.setState({ activePanel: id });
+  }
+  scheduleClose() {
+    this.closeTimer = setTimeout(() => this.setState({ activePanel: null }), 150);
+  }
+  cancelClose() {
+    clearTimeout(this.closeTimer);
+  }
+
+  noise2(x, y) {
+    const s = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+    const fx = Math.floor(x), fy = Math.floor(y);
+    const smooth = (a, b, t) => a + (b - a) * (t * t * (3 - 2 * t));
+    const corner = (ix, iy) => {
+      const v = Math.sin(ix * 12.9898 + iy * 78.233) * 43758.5453;
+      return v - Math.floor(v);
+    };
+    const tx = x - fx, ty = y - fy;
+    const top = smooth(corner(fx, fy), corner(fx + 1, fy), tx);
+    const bot = smooth(corner(fx, fy + 1), corner(fx + 1, fy + 1), tx);
+    return smooth(top, bot, ty) * 2 - 1;
+  }
+
+  initWave(canvas, bgFill, colors, rafKey) {
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const parent = canvas.parentElement;
+    let w = parent.clientWidth, h = parent.clientHeight;
+    canvas.width = w; canvas.height = h;
+    let nt = 0;
+    const speed = 0.0005;
+    const drawWave = (n) => {
+      for (let i = 0; i < n; i++) {
+        ctx.beginPath();
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = colors[i % colors.length];
+        const baseY = h * 0.5;
+        for (let x = 0; x < w; x += 6) {
+          const y = Math.sin(x / 220 + nt * 30 + i * 0.35) * 70
+                  + Math.sin(x / 90 + nt * 50 - i * 0.5) * 25
+                  + this.noise2(x / 300, nt * 12 + i) * 14;
+          if (x === 0) ctx.moveTo(x, y + baseY); else ctx.lineTo(x, y + baseY);
+        }
+        ctx.stroke();
+        ctx.closePath();
+      }
+    };
+    const render = () => {
+      nt += speed;
+      ctx.fillStyle = bgFill;
+      ctx.globalAlpha = 1;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalAlpha = 0.85;
+      drawWave(5);
+      this[rafKey] = requestAnimationFrame(render);
+    };
+    render();
+    const onResize = () => { w = parent.clientWidth; h = parent.clientHeight; canvas.width = w; canvas.height = h; };
+    window.addEventListener('resize', onResize);
+    this['_onResize_' + rafKey] = onResize;
+  }
+
+  componentDidMount() {
+    this.initWave(this.canvas2, '#ffffff', ['#F07030', '#d85a1e', '#F58A3C', '#e8b287', '#c9541b'], 'raf2');
+  }
+
+  componentWillUnmount() {
+    if (this.raf2) cancelAnimationFrame(this.raf2);
+    if (this._onResize_raf2) window.removeEventListener('resize', this._onResize_raf2);
+  }
+
+  renderVals() {
+    const active = this.state.activePanel;
+    const tab = (id) => ({
+      active: active === id,
+      color: active === id ? '#1a1a1a' : '#767370',
+      bg: active === id ? '#faf8f5' : 'transparent',
+      chev: active === id ? 'rotate(180deg)' : 'rotate(0deg)',
+    });
+    const t1 = tab('expertises'), t2 = tab('secteur'), t3 = tab('objectifs'), t4 = tab('apropos');
+    return {
+      canvasRef2: (el) => { this.canvas2 = el; },
+      openExpertises: () => this.openPanel('expertises'),
+      openSecteur: () => this.openPanel('secteur'),
+      openObjectifs: () => this.openPanel('objectifs'),
+      openApropos: () => this.openPanel('apropos'),
+      scheduleClose: () => this.scheduleClose(),
+      cancelClose: () => this.cancelClose(),
+      isExpertisesActive: t1.active,
+      isSecteurActive: t2.active,
+      isObjectifsActive: t3.active,
+      isAproposActive: t4.active,
+      expertisesColor: t1.color, expertisesBg: t1.bg, expertisesChevRotate: t1.chev,
+      secteurColor: t2.color, secteurBg: t2.bg, secteurChevRotate: t2.chev,
+      objectifsColor: t3.color, objectifsBg: t3.bg, objectifsChevRotate: t3.chev,
+      aproposColor: t4.color, aproposBg: t4.bg, aproposChevRotate: t4.chev,
+      wrapPointerEvents: active ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

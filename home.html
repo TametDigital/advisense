@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advisense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;800;900&family=Instrument+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&family=Urbanist:wght@900&family=Bodoni+Moda:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<style>
+.home-nav{background:transparent !important;border-bottom-color:transparent !important;transition:background 0.3s ease,border-color 0.3s ease}
+.home-nav .home-nav-brand{color:#ffffff !important;transition:color 0.3s ease}
+.home-nav .home-nav-link{color:#ffffff !important;transition:color 0.3s ease}
+.home-nav .home-nav-hub-btn{background:transparent !important;color:#ffffff !important;border-color:#ffffff !important;transition:background 0.3s ease,color 0.3s ease,border-color 0.3s ease}
+.home-nav.scrolled{background:#ffffff !important;border-bottom-color:#e7e3dd !important}
+.home-nav.scrolled .home-nav-brand{color:#111111 !important}
+.home-nav.scrolled .home-nav-link{color:#404040 !important}
+.home-nav.scrolled .home-nav-hub-btn{background:#ffffff !important;color:#1a1a1a !important;border-color:#1a1a1a !important}
+.segrow:not(:hover) #segcard-pinned .card-desc{display:block}
+.situation-card{opacity:0;transform:translateX(-60px);transition:transform 0.7s ease,opacity 0.7s ease}
+.situation-card.in-view{opacity:1;transform:translateX(0)}
+.situation-card.out-view{opacity:0;transform:translateX(60px)}
+.situation-card:nth-child(1){transition-delay:0s}
+.situation-card:nth-child(2){transition-delay:0.08s}
+.situation-card:nth-child(3){transition-delay:0.16s}
+.situation-card:nth-child(4){transition-delay:0.24s}
+</style>
+</head>
+<body>
+
+<!-- 0. MEGA MENU -->
+<section data-screen-label="Mega menu" style="position:fixed;top:0;left:0;right:0;width:100%;z-index:50">
+    <nav class="home-nav" style="position:relative;min-height:72px;background:#ffffff;border-bottom:1px solid #e7e3dd;display:flex;flex-wrap:wrap;align-items:center;padding:12px clamp(16px,4vw,32px);gap:16px;width:100%">
+      <a href="home.html" style="display:inline-flex;align-items:baseline;text-decoration:none;flex-shrink:0">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:28px;color:#F07030;line-height:1;margin-right:1px;position:relative;top:5px">"</span>
+        <span class="home-nav-brand" style="font-family:'Urbanist',sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.025em;color:#111111;line-height:1">advisense</span>
+      </a>
+      <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center;margin:0;padding:0">
+        <li data-menu-trigger="expertises" data-menu-out style="position:relative">
+          <button class="home-nav-link" style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Nos expertises <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="secteur" data-menu-out style="position:relative">
+          <button class="home-nav-link" style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Votre secteur <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="objectifs" data-menu-out style="position:relative">
+          <button class="home-nav-link" style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">Vos objectifs <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+        <li data-menu-trigger="apropos" data-menu-out style="position:relative">
+          <button class="home-nav-link" style="display:flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;color:#404040;cursor:pointer;padding:8px 14px;border-radius:8px;border:none;background:transparent;white-space:nowrap">À propos <span style="font-size:10px;opacity:0.5;transform:rotate(0deg);display:inline-block">▾</span></button>
+        </li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;margin-left:auto">
+        <a href="apropos-notre-hub.html" class="home-nav-hub-btn" style="display:inline-flex;align-items:center;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#1a1a1a;background:#ffffff;padding:10px 20px;border-radius:10px;border:1px solid #1a1a1a;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#ffffff;background:#F07030;padding:10px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:13px">Prendre contact <span>→</span></a>
+      </div>
+    </nav>
+
+    <div data-menu-zone data-menu-out style="position:absolute;top:72px;left:0;right:0;display:flex;justify-content:center;pointer-events:auto">
+
+      <div class="mega-panel" data-panel="expertises" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Trois piliers, présentés en trois cartes.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+            <a href="expertise-strategie-impact.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Stratégie &amp; Impact</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Clarifiez ce qui compte vraiment.</div>
+            </a>
+            <a href="expertise-mobilisation-engagement.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Mobilisation &amp; Engagement</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Fédérez ceux qui peuvent vous soutenir.</div>
+            </a>
+            <a href="expertise-digital-innovation.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Digital &amp; Innovation</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Concevez, construisez, accélérez.</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="secteur" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Trouvez l'accompagnement pensé pour votre contexte.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+            <a href="secteur-philanthropie.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Philanthropie &amp; Collecte</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Associations · Fondations · Acteurs de l'intérêt général</div>
+            </a>
+            <a href="secteur-corporate.html" style="background:#faf8f5;border-radius:0;padding:20px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:10px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px">Corporate &amp; Business</div>
+              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">PME &amp; ETI · Startups · Industrie · Santé &amp; Sciences</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="objectifs" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:920px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px;max-width:640px">Nous partons de votre besoin, pas de notre catalogue.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Lancer mon projet</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">De l'idée à la réalité.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Penser ma stratégie</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Clarifier cap et priorités.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Piloter ma transformation</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Réorganiser et transformer.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Trouver mes nouvelles ressources</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Sécuriser mes financements.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Augmenter ma visibilité</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Gagner en visibilité.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Mobiliser mes équipes</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Fédérer mes équipes.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Construire mon réseau de partenaires</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Construire des partenariats.</span>
+            </a>
+            <a href="vos-objectifs.html" style="background:#faf8f5;border-radius:0;padding:14px 16px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:6px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Intégrer l'IA à mon organisation</span>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Adopter l'IA utile.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-panel" data-panel="apropos" hidden>
+        <div style="background:#ffffff;border-radius:0;padding:24px;margin-top:2px;width:820px;max-width:calc(100vw - 64px)">
+          <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#1a1a1a;margin-bottom:16px">Découvrir Advisense</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+            <a href="apropos-positionnement.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Notre positionnement</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Deux univers, une seule exigence.</span>
+            </a>
+            <a href="apropos-notre-hub.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Notre Hub</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Les experts qui portent vos missions.</span>
+            </a>
+            <a href="apropos-cas-clients.html" style="background:#faf8f5;border-radius:0;padding:18px;text-decoration:none;color:#1a1a1a;display:flex;flex-direction:column;gap:8px;transition:background 0.25s ease" data-hover="background:#f1ebe1">
+              <div style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px">Nos cas clients</div>
+              <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#F07030">Des missions concrètes, des résultats mesurables.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- 1b. HERO CANVAS ONDES (fond blanc) -->
+<section data-screen-label="Hero canvas ondes" style="position:relative;width:100%;min-height:100vh;overflow:hidden;background:#ffffff">
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><source src="images/hero_video.mp4" type="video/mp4"></video>
+    <div style="position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px clamp(20px,6vw,60px)">
+      <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(32px,5vw,52px);letter-spacing:-0.02em;color:#1a1a1a;margin:0 0 28px;max-width:900px;line-height:1.1">Les experts qui produisent.<br><span style="color:#ffffff">L'expertise sans intermédiaire.</span></h2>
+      <div style="display:flex;flex-wrap:wrap;gap:16px">
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:14px">Prendre contact <span>→</span></a>
+        <a href="#" style="display:inline-flex;align-items:center;background:#ffffff;color:#1a1a1a;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:none;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+      </div>
+    </div>
+  </section>
+
+<!-- 3. BANDEAU ACCROCHE (situations) -->
+<section data-screen-label="Bandeau accroche situations" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;color:#1a1a1a;margin:0 0 16px">Le conseil ne devrait pas fonctionner ainsi.</h2>
+    <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.6;color:#767370;margin:0 0 40px;max-width:760px">Vous méritez des experts qui restent impliqués, des décisions qui se transforment en actions et un budget consacré à ce qui crée réellement de la valeur. Pourtant, ce n'est pas toujours ce que vivent les organisations.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <div class="situation-card" style="flex:1;min-width:220px;min-height:220px;background:#faf8f5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px">
+        <span style="width:40px;height:40px;border-radius:10px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.4;font-weight:500;color:#404040"><strong style="font-weight:700;color:#1a1a1a;display:block;margin-bottom:6px">Les recommandations s'empilent</strong>Elles restent dans les présentations au lieu d'être mises en œuvre.</span>
+      </div>
+      <div class="situation-card" style="flex:1;min-width:220px;min-height:220px;background:#faf8f5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px">
+        <span style="width:40px;height:40px;border-radius:10px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.4;font-weight:500;color:#404040"><strong style="font-weight:700;color:#1a1a1a;display:block;margin-bottom:6px">Les experts s'effacent</strong>Après la vente, le projet change souvent de mains.</span>
+      </div>
+      <div class="situation-card" style="flex:1;min-width:220px;min-height:220px;background:#faf8f5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px">
+        <span style="width:40px;height:40px;border-radius:10px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.4;font-weight:500;color:#404040"><strong style="font-weight:700;color:#1a1a1a;display:block;margin-bottom:6px">Les coûts s'accumulent</strong>Votre budget finance autant la structure que l'expertise.</span>
+      </div>
+      <div class="situation-card" style="flex:1;min-width:220px;min-height:220px;background:#F07030;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px">
+        <span style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16.5 12"/></svg></span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.4;font-weight:500;color:rgba(255,255,255,0.85)"><strong style="font-weight:700;color:#ffffff;display:block;margin-bottom:6px">Les décisions attendent</strong>Les réunions s'enchaînent, les résultats tardent.</span>
+      </div>
+    </div>
+  </section>
+
+<!-- 2. BANDEAU EDITORIAL -->
+<section data-screen-label="Bandeau editorial" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="display:flex;gap:16px;height:520px;min-height:0;margin-bottom:64px">
+      <div style="flex:1;min-height:0;min-width:0"><div class="img-slot" id="edit-1" role="img" aria-label="Portrait client 1" style="width:100%;height:100%;background:url('images/adolescent-borne.jpeg') center/cover no-repeat;border-radius:16px"></div></div>
+      <div style="flex:1;min-height:0;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <div style="flex:1.6;min-height:0;min-width:0"><div class="img-slot" id="edit-2" role="img" aria-label="Usage produit mobile" style="width:100%;height:100%;background:url('images/association-handicap.jpeg') center/cover no-repeat;border-radius:16px"></div></div>
+        <div style="flex:1;min-height:0;min-width:0"><div class="img-slot" id="edit-3" role="img" aria-label="Portrait client 2" style="width:100%;height:100%;background:url('images/benevole-association-animaux.jpeg') center/cover no-repeat;border-radius:16px"></div></div>
+      </div>
+      <div style="flex:1;min-height:0;min-width:0"><div class="img-slot" id="edit-4" role="img" aria-label="Portrait client 3" style="width:100%;height:100%;background:url('images/benevoles-association.jpeg') center/cover no-repeat;border-radius:16px"></div></div>
+      <div style="flex:1;min-height:0;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <div style="flex:1;min-height:0;min-width:0"><div class="img-slot" id="edit-5" role="img" aria-label="Équipe au bureau" style="width:100%;height:100%;background:url('images/cosmetique.png') center/cover no-repeat;border-radius:16px"></div></div>
+        <div style="flex:1.6;min-height:0;min-width:0"><div class="img-slot" id="edit-6" role="img" aria-label="Portrait équipe" style="width:100%;height:100%;background:url('images/couple-canape.jpeg') center/cover no-repeat;border-radius:16px"></div></div>
+      </div>
+      <div style="flex:1;min-height:0;min-width:0"><div class="img-slot" id="edit-7" role="img" aria-label="Portrait client 4" style="width:100%;height:100%;background:url('images/don-du-sang.jpeg') center/cover no-repeat;border-radius:16px"></div></div>
+    </div>
+    <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(26px,4.5vw,36px);letter-spacing:-0.02em;color:#1a1a1a;text-align:center;margin:0 0 48px">Chez Advisense, nous avons fait un autre choix.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:clamp(56px,8vw,96px)">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="width:48px;height:48px;border-radius:12px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
+        <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a;line-height:1.35">Accompagnement de bout en bout</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="width:48px;height:48px;border-radius:12px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></span>
+        <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a;line-height:1.35">Des experts opérationnels</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="width:48px;height:48px;border-radius:12px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></span>
+        <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a;line-height:1.35">Zéro intermédiaire</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="width:48px;height:48px;border-radius:12px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+        <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a;line-height:1.35">Des résultats concrets</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(32px,6vw,64px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030">Le constat</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;line-height:1.2;color:#1a1a1a;margin:0">Beaucoup de réunions. Peu de résultats.</h2>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#404040;margin:0"><span style="float:left;width:44px;height:44px;background:#fbe9dd;color:#F07030;font-family:'Geist',sans-serif;font-weight:600;font-size:22px;display:flex;align-items:center;justify-content:center;margin-right:12px">V</span>ous avez peut-être déjà payé des recommandations qui finissent dans un PowerPoint, travaillé avec des consultants qui parlent du terrain sans l'avoir réellement vécu, ou vu votre projet confié à des profils plus juniors après les premières réunions. Trop souvent, une part importante du budget finance les frais de structure et les couches de management plutôt que l'expertise elle-même.</p>
+      </div>
+      <div style="max-width:520px;width:100%;margin:0 auto;background:#ffffff;border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:20px;box-shadow:0 8px 32px rgba(26,26,26,0.08)">
+        <div style="display:flex;gap:12px">
+          <span style="flex:1;display:flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(192,57,43,0.12);color:#c0392b;font-weight:700;font-size:11px;flex-shrink:0">✕</span>Traditionnels</span>
+          <span style="flex:1;display:flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(60,138,85,0.14);color:#3c8a55;font-weight:700;font-size:11px;flex-shrink:0">✓</span>Advisense</span>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="flex:1;height:44px;border-radius:22px;background:#f1ede6;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#767370">Vous achetez une structure</span>
+          <span style="flex:1;height:44px;border-radius:22px;background:linear-gradient(90deg,#F07030,#ff9354);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#ffffff">Vous investissez dans des experts</span>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="flex:1;height:44px;border-radius:22px;background:#f1ede6;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#767370">Vous échangez avec un commercial</span>
+          <span style="flex:1;height:44px;border-radius:22px;background:linear-gradient(90deg,#F07030,#ff9354);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#ffffff">Vous travaillez avec celui qui produit</span>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="flex:1;height:44px;border-radius:22px;background:#f1ede6;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#767370">Beaucoup de théorie</span>
+          <span style="flex:1;height:44px;border-radius:22px;background:linear-gradient(90deg,#F07030,#ff9354);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#ffffff">Des solutions éprouvées</span>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="flex:1;height:44px;border-radius:22px;background:#f1ede6;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#767370">Des équipes nombreuses</span>
+          <span style="flex:1;height:44px;border-radius:22px;background:linear-gradient(90deg,#F07030,#ff9354);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13px;color:#ffffff">Une équipe choisie pour votre projet</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(32px,6vw,64px);align-items:center;margin-top:clamp(56px,8vw,96px)">
+      <div style="max-width:520px;width:100%;margin:0 auto;order:1;background:#ffffff;border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:28px;box-shadow:0 8px 32px rgba(26,26,26,0.08)">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="display:flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#767370" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Avec une agence</span>
+          <div style="display:flex;height:44px;border-radius:22px;overflow:hidden">
+            <div style="flex:1;background:#F07030;display:flex;align-items:center;justify-content:center"><span style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#ffffff">50% structure</span></div>
+            <div style="flex:1;background:#f1ede6;display:flex;align-items:center;justify-content:center"><span style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#767370">50% production</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="display:flex;align-items:center;gap:8px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#1a1a1a"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Avec Advisense</span>
+          <div style="height:44px;border-radius:22px;background:linear-gradient(90deg,#F07030,#ff9354);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#ffffff">100% production</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid #f1ede6;padding-top:20px;text-align:center">
+          <p style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a;margin:0">Même qualité. Sans détour. Budget optimisé.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;order:2">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030">Notre approche</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;line-height:1.2;color:#1a1a1a;margin:0">Moins d'intermédiaires. Plus d'impact.</h2>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#404040;margin:0"><span style="float:left;width:44px;height:44px;background:#fbe9dd;color:#F07030;font-family:'Geist',sans-serif;font-weight:600;font-size:22px;display:flex;align-items:center;justify-content:center;margin-right:12px">C</span>hez Advisense, nous avons fait un autre choix. L'expert que vous rencontrez est celui qui vous accompagne de bout en bout. Des femmes et des hommes qui ont dirigé, décidé et livré des projets sur le terrain. Votre budget est consacré à l'expertise qui produit de la valeur, avec un objectif simple&nbsp;: transformer les idées en résultats concrets, sans détour ni intermédiaire.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- 2b. BANDEAU TROIS CARDS -->
+<section data-screen-label="Bandeau trois cards" style="width:100%;background:#faf8f5;padding:clamp(48px,8vw,96px) 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+    <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px;width:fit-content;display:inline-block;margin-bottom:20px">Nos expertises</span>
+    <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(26px,4.5vw,36px);letter-spacing:-0.02em;color:#1a1a1a;margin:0 0 16px">Trois convictions simples</h2>
+    <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.6;color:#767370;margin:0 0 48px;max-width:720px">Une organisation qui sait où elle va convainc plus facilement. Une organisation qui convainc mobilise plus de ressources. Une organisation qui maîtrise ses outils digitaux va plus loin, plus vite.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div style="border-right:1px solid #e7e3dd;padding:32px 32px 32px 0;display:flex;flex-direction:column;gap:12px">
+        <span style="width:40px;height:40px;border-radius:10px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Stratégie &amp; Impact</h3>
+        <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030">Clarifiez ce qui compte vraiment</span>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Positionnement, gouvernance, feuille de route, mesure de l'impact — nous posons les fondations sur lesquelles tout le reste s'appuie.</p>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;margin-top:8px;width:fit-content;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir <span>→</span></a>
+      </div>
+      <div style="border-right:1px solid #e7e3dd;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <span style="width:40px;height:40px;border-radius:10px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Mobilisation &amp; Engagement</h3>
+        <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030">Fédérez ceux qui peuvent vous soutenir</span>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Collecte, prospection, partenariats, grands donateurs — nous construisons les stratégies et les outils qui transforment l'adhésion en ressources concrètes.</p>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;margin-top:8px;width:fit-content;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir <span>→</span></a>
+      </div>
+      <div style="padding:32px 0 32px 32px;display:flex;flex-direction:column;gap:12px">
+        <span style="width:40px;height:40px;border-radius:10px;background:#fbe9dd;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></span>
+        <h3 style="font-family:'Geist',sans-serif;font-weight:600;font-size:20px;color:#1a1a1a;margin:0">Digital &amp; Innovation</h3>
+        <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030">Concevez, construisez, accélérez</span>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:#767370;margin:0">Plateformes sur mesure, expériences utilisateur, agents IA, contenus innovants — nous créons ce qui n'existait pas encore pour amplifier votre impact.</p>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;margin-top:8px;width:fit-content;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir <span>→</span></a>
+      </div>
+    </div>
+  </div>
+  </section>
+
+<!-- 5. BANDEAU 4 ENCARTS IMAGES -->
+<section data-screen-label="Bandeau 4 encarts images" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;color:#1a1a1a;margin:0 0 8px">Pourquoi nos clients nous font confiance</h2>
+    <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;color:#767370;margin:0 0 40px;max-width:640px">Une conviction simple&nbsp;: le meilleur conseil est celui qui est porté par ceux qui savent le mettre en œuvre.</p>
+    <div class="segrow" style="display:flex;gap:16px;height:420px">
+      <div class="segcard" style="min-width:0;height:100%;position:relative;border-radius:16px;overflow:hidden">
+        <div class="img-slot" id="seg-1" role="img" aria-label="Dirigeant en réunion" style="width:100%;height:100%;background:url('assets/photo-4.jpeg') center/cover no-repeat"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0) 55%);pointer-events:none"></div>
+        <span style="position:absolute;left:16px;top:16px;background:#fbe9dd;color:#F07030;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px">Expérience</span>
+        <div style="position:absolute;left:16px;bottom:16px;right:16px;color:#ffffff">
+          <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:16px;display:block">Des dirigeants</span>
+          <span class="card-desc" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin-top:4px">Nos experts ont dirigé des organisations, pris des décisions et porté des résultats avant de conseiller les vôtres.</span>
+        </div>
+      </div>
+      <div class="segcard" style="min-width:0;height:100%;position:relative;border-radius:16px;overflow:hidden">
+        <div class="img-slot" id="seg-2" role="img" aria-label="Échange direct avec un expert" style="width:100%;height:100%;background:url('assets/photo-3.jpeg') center/cover no-repeat"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0) 55%);pointer-events:none"></div>
+        <span style="position:absolute;left:16px;top:16px;background:#fbe9dd;color:#F07030;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px">Circuit court</span>
+        <div style="position:absolute;left:16px;bottom:16px;right:16px;color:#ffffff">
+          <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:16px;display:block">Sans intermédiaire</span>
+          <span class="card-desc" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin-top:4px">Vous échangez directement avec l'expert qui conçoit et réalise votre mission, du premier rendez-vous jusqu'à la livraison.</span>
+        </div>
+      </div>
+      <div id="segcard-pinned" class="segcard tpe" style="min-width:0;height:100%;position:relative;border-radius:16px;overflow:hidden">
+        <div class="img-slot" id="seg-3" role="img" aria-label="Budget consacré à l'expertise" style="width:100%;height:100%;background:url('assets/photo-1.jpeg') center/cover no-repeat"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0) 55%);pointer-events:none"></div>
+        <span style="position:absolute;left:16px;top:16px;background:#fbe9dd;color:#F07030;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px">Modèle</span>
+        <div style="position:absolute;left:16px;bottom:16px;right:16px;color:#ffffff">
+          <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:16px;display:block">Votre budget, l'expertise</span>
+          <span class="card-desc" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin-top:4px">Nous investissons dans les compétences, pas dans des couches de management ou des frais de structure inutiles.</span>
+        </div>
+      </div>
+      <div class="segcard" style="min-width:0;height:100%;position:relative;border-radius:16px;overflow:hidden">
+        <div class="img-slot" id="seg-4" role="img" aria-label="Résultat concret livré" style="width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0) 55%);pointer-events:none"></div>
+        <span style="position:absolute;left:16px;top:16px;background:#fbe9dd;color:#F07030;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px">Impact</span>
+        <div style="position:absolute;left:16px;bottom:16px;right:16px;color:#ffffff">
+          <span style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:16px;display:block">Du concret</span>
+          <span class="card-desc" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin-top:4px">Nous ne livrons pas seulement des recommandations&nbsp;: nous construisons des solutions qui produisent des résultats.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 6. BANDEAU ENCART CARROUSEL DEFILANT -->
+<section data-screen-label="Bandeau carrousel defilant" style="max-width:1240px;margin:0 auto;padding:clamp(40px,7vw,80px) clamp(16px,4vw,32px)">
+    <div style="display:flex;gap:16px;height:600px;background:#faf8f5;border-radius:24px;overflow:hidden">
+      <div style="flex:1;padding:clamp(32px,6vw,56px) clamp(24px,5vw,48px);display:flex;flex-direction:column;justify-content:center;gap:20px;min-width:0">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px;width:fit-content">Notre Hub</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;line-height:1.25;color:#1a1a1a;margin:0">Connecter les expertises. Libérer l'exécution.</h2>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.6;color:#767370;margin:0;max-width:420px">Nous mobilisons les meilleurs experts selon vos besoins. Vous gardez un interlocuteur unique, mais vous bénéficiez d'une équipe élargie.</p>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;width:fit-content;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Voir tous nos experts <span>→</span></a>
+      </div>
+      <div class="marquee-col marquee-down" style="width:280px;flex:0 0 auto;height:100%;overflow:hidden">
+        <div class="marquee-track" style="display:flex;flex-direction:column;gap:16px">
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="mosaic-img-1" role="img" aria-label="Distinction / label" style="width:100%;height:100%;background:url('assets/photo-4.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="mosaic-img-2" role="img" aria-label="Photo entreprise engagée" style="width:100%;height:100%;background:url('assets/photo-3.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="mosaic-img-3" role="img" aria-label="Photo équipe" style="width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="mosaic-img-1b" role="img" aria-label="Distinction / label" style="width:100%;height:100%;background:url('assets/photo-4.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="mosaic-img-2b" role="img" aria-label="Photo entreprise engagée" style="width:100%;height:100%;background:url('assets/photo-3.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="mosaic-img-3b" role="img" aria-label="Photo équipe" style="width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div></div>
+        </div>
+      </div>
+      <div class="marquee-col marquee-up" style="width:280px;flex:0 0 auto;height:100%;overflow:hidden">
+        <div class="marquee-track" style="display:flex;flex-direction:column;gap:16px">
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="carousel-photo-1" role="img" aria-label="Détail carte / usage quotidien" style="width:100%;height:100%;background:url('assets/photo-1.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="carousel-photo-3" role="img" aria-label="Note Trustpilot" style="width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="carousel-photo-2" role="img" aria-label="Échange en agence" style="width:100%;height:100%;background:url('assets/photo-4.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="carousel-photo-1b" role="img" aria-label="Détail carte / usage quotidien" style="width:100%;height:100%;background:url('assets/photo-1.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="carousel-photo-3b" role="img" aria-label="Note Trustpilot" style="width:100%;height:100%;background:url('assets/photo-2.jpeg') center/cover no-repeat"></div></div>
+          <div style="height:176px;border-radius:16px;overflow:hidden"><div class="img-slot" id="carousel-photo-2b" role="img" aria-label="Échange en agence" style="width:100%;height:100%;background:url('assets/photo-4.jpeg') center/cover no-repeat"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- 4b. BANDEAU ENCART TEXTE + IMAGE (GAUCHE) -->
+<section data-screen-label="Bandeau encart texte-image gauche" style="background:#faf8f5;padding:clamp(48px,8vw,96px) 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,64px);align-items:center">
+      <div class="img-slot" id="split-img-2" role="img" aria-label="Photo produit / usage" style="width:100%;aspect-ratio:4/3;background:url('assets/photo-3.jpeg') center/cover no-repeat;border-radius:16px"></div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#F07030">Où nous intervenons</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;line-height:1.25;color:#1a1a1a;margin:0;margin-top:-10px">Nos secteurs d'intervention</h2>
+        <p style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#404040;margin:0">Nous intervenons directement sur vos sujets — stratégie, structuration, développement, digital — sans couche de management inutile, en appliquant à chaque mission le meilleur des deux univers que nous connaissons.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px">
+            <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a">Philanthropie &amp; Collecte</span>
+            <span style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#767370">— Associations · Fondations · Mécénat d'entreprise.</span>
+            <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#F07030;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir <span>→</span></a>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px">
+            <span style="font-family:'Geist',sans-serif;font-weight:600;font-size:16px;color:#1a1a1a">Corporate &amp; Business</span>
+            <span style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#767370">— PME &amp; ETI · Startups · Industrie · Santé &amp; Sciences.</span>
+            <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:14px;color:#F07030;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 8. CAS CLIENTS -->
+<section data-screen-label="Cas clients" style="width:100%;padding:clamp(48px,8vw,96px) 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #e7e3dd;padding-bottom:32px;margin-bottom:0">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#F07030;background:#fbe9dd;padding:5px 12px;border-radius:6px;width:fit-content">Nos cas clients</span>
+        <h2 style="font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);letter-spacing:-0.02em;color:#1a1a1a;margin:0">Des missions concrètes. Des résultats mesurables.</h2>
+      </div>
+      <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;white-space:nowrap;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Voir toutes nos références <span>→</span></a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div style="border-right:1px solid #e7e3dd;padding:32px 32px 32px 0;display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px;width:fit-content">Impact &amp; philanthropie</span>
+        <span style="font-family:'Geist',sans-serif;font-weight:700;font-size:20px;color:#1a1a1a">Fondation Terres Solidaires</span>
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:34px;color:#F07030">+3,2 M€</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#767370">mobilisés en 18 mois</span>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir le cas <span>→</span></a>
+      </div>
+      <div style="border-right:1px solid #e7e3dd;padding:32px;display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px;width:fit-content">Corporate &amp; business</span>
+        <span style="font-family:'Geist',sans-serif;font-weight:700;font-size:20px;color:#1a1a1a">Groupe Meridian</span>
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:34px;color:#F07030">×2,4</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#767370">pipeline de dons structuré</span>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir le cas <span>→</span></a>
+      </div>
+      <div style="padding:32px 0 32px 32px;display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#1a1a1a;background:#ddeadd;padding:5px 12px;border-radius:6px;width:fit-content">Impact &amp; philanthropie</span>
+        <span style="font-family:'Geist',sans-serif;font-weight:700;font-size:20px;color:#1a1a1a">Institut Vivant</span>
+        <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:34px;color:#F07030">6 mois</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#767370">de la stratégie au lancement</span>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;color:#F07030;transition:color 0.25s ease,gap 0.25s ease" data-hover="color:#d85a1e;gap:10px">Découvrir le cas <span>→</span></a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<!-- 7. BANDEAU ENCART (PROMO) -->
+<section data-screen-label="Bandeau encart promo" style="max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)">
+    <div style="position:relative;background:radial-gradient(circle at 8% 20%, #fbe9dd 0%, rgba(251,233,221,0) 45%),radial-gradient(circle at 92% 80%, #ddeadd 0%, rgba(221,234,221,0) 45%),#faf8f5;border-radius:24px;padding:80px 32px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center;overflow:hidden">
+      <h2 style="position:relative;font-family:'Geist',sans-serif;font-weight:600;font-size:clamp(26px,4.5vw,36px);letter-spacing:-0.02em;line-height:1.25;color:#1a1a1a;margin:0;max-width:600px">Un projet, une question, une intuition ?</h2>
+      <p style="position:relative;font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.5;color:#404040;margin:0;max-width:520px">Nous répondons toujours. Et nous aimons les conversations qui vont droit au but.</p>
+      <div style="position:relative;display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease" data-hover="background:#d85a1e">Parlons de votre projet <span>→</span></a>
+        <a href="#" style="background:transparent;color:#1a1a1a;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #1a1a1a;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+      </div>
+    </div>
+  </section>
+
+<!-- 9. FOOTER -->
+<footer data-screen-label="Footer" style="background:#faf8f5;padding:80px 0 0;border-top:1px solid #e7e3dd">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div style="display:inline-flex;align-items:baseline;font-family:'Urbanist',sans-serif;font-weight:900;font-size:clamp(56px,14vw,120px);letter-spacing:-0.025em;line-height:1;margin-bottom:56px">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:900;font-size:clamp(64px,16vw,140px);color:#F07030;line-height:1;position:relative;top:24px;margin-right:2px">"</span>
+        <span style="display:inline-block;background:linear-gradient(180deg,#1a1a1a 0%,rgba(26,26,26,0.08) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">advisense</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;padding-bottom:56px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Nos expertises</span>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Stratégie &amp; Impact</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Mobilisation &amp; Engagement</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Digital &amp; Innovation</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:32px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Votre secteur</span>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Philanthropie &amp; Collecte</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Corporate &amp; Business</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">À propos</span>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Notre positionnement</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Notre Hub</a>
+            <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Nos cas clients</a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;color:#767370">Contactez-nous</span>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">LinkedIn</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Calendly</a>
+          <a href="#" style="font-size:15px;color:#1a1a1a;transition:color 0.25s ease" data-hover="color:#F07030">Email</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;background:transparent;color:#1a1a1a;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #1a1a1a;transition:background 0.25s ease,color 0.25s ease" data-hover="background:#1a1a1a;color:#ffffff">Découvrir notre Hub</a>
+          <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F07030;color:#ffffff;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid #F07030;transition:background 0.25s ease,gap 0.25s ease" data-hover="background:#d85a1e;gap:12px">Parlons de votre projet <span>→</span></a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e7e3dd;padding:24px 0">
+        <span style="font-size:13px;color:#767370">© 2026 Advisense, Inc. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  canvas2 = null;
+  raf2 = null;
+  state = { activePanel: null };
+  closeTimer = null;
+
+  openPanel(id) {
+    clearTimeout(this.closeTimer);
+    this.setState({ activePanel: id });
+  }
+  scheduleClose() {
+    this.closeTimer = setTimeout(() => this.setState({ activePanel: null }), 150);
+  }
+  cancelClose() {
+    clearTimeout(this.closeTimer);
+  }
+
+  noise2(x, y) {
+    const s = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+    const fx = Math.floor(x), fy = Math.floor(y);
+    const smooth = (a, b, t) => a + (b - a) * (t * t * (3 - 2 * t));
+    const corner = (ix, iy) => {
+      const v = Math.sin(ix * 12.9898 + iy * 78.233) * 43758.5453;
+      return v - Math.floor(v);
+    };
+    const tx = x - fx, ty = y - fy;
+    const top = smooth(corner(fx, fy), corner(fx + 1, fy), tx);
+    const bot = smooth(corner(fx, fy + 1), corner(fx + 1, fy + 1), tx);
+    return smooth(top, bot, ty) * 2 - 1;
+  }
+
+  initWave(canvas, bgFill, colors, rafKey) {
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const parent = canvas.parentElement;
+    let w = parent.clientWidth, h = parent.clientHeight;
+    canvas.width = w; canvas.height = h;
+    let nt = 0;
+    const speed = 0.0005;
+    const drawWave = (n) => {
+      for (let i = 0; i < n; i++) {
+        ctx.beginPath();
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = colors[i % colors.length];
+        const baseY = h * 0.5;
+        for (let x = 0; x < w; x += 6) {
+          const y = Math.sin(x / 220 + nt * 30 + i * 0.35) * 70
+                  + Math.sin(x / 90 + nt * 50 - i * 0.5) * 25
+                  + this.noise2(x / 300, nt * 12 + i) * 14;
+          if (x === 0) ctx.moveTo(x, y + baseY); else ctx.lineTo(x, y + baseY);
+        }
+        ctx.stroke();
+        ctx.closePath();
+      }
+    };
+    const render = () => {
+      nt += speed;
+      ctx.fillStyle = bgFill;
+      ctx.globalAlpha = 1;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalAlpha = 0.85;
+      drawWave(5);
+      this[rafKey] = requestAnimationFrame(render);
+    };
+    render();
+    const onResize = () => { w = parent.clientWidth; h = parent.clientHeight; canvas.width = w; canvas.height = h; };
+    window.addEventListener('resize', onResize);
+    this['_onResize_' + rafKey] = onResize;
+  }
+
+  componentDidMount() {
+    this.initWave(this.canvas2, '#ffffff', ['#F07030', '#d85a1e', '#F58A3C', '#e8b287', '#c9541b'], 'raf2');
+  }
+
+  componentWillUnmount() {
+    if (this.raf2) cancelAnimationFrame(this.raf2);
+    if (this._onResize_raf2) window.removeEventListener('resize', this._onResize_raf2);
+  }
+
+  renderVals() {
+    const active = this.state.activePanel;
+    const tab = (id) => ({
+      active: active === id,
+      color: active === id ? '#1a1a1a' : '#767370',
+      bg: active === id ? '#faf8f5' : 'transparent',
+      chev: active === id ? 'rotate(180deg)' : 'rotate(0deg)',
+    });
+    const t1 = tab('expertises'), t2 = tab('secteur'), t3 = tab('objectifs'), t4 = tab('apropos');
+    return {
+      canvasRef2: (el) => { this.canvas2 = el; },
+      openExpertises: () => this.openPanel('expertises'),
+      openSecteur: () => this.openPanel('secteur'),
+      openObjectifs: () => this.openPanel('objectifs'),
+      openApropos: () => this.openPanel('apropos'),
+      scheduleClose: () => this.scheduleClose(),
+      cancelClose: () => this.cancelClose(),
+      isExpertisesActive: t1.active,
+      isSecteurActive: t2.active,
+      isObjectifsActive: t3.active,
+      isAproposActive: t4.active,
+      expertisesColor: t1.color, expertisesBg: t1.bg, expertisesChevRotate: t1.chev,
+      secteurColor: t2.color, secteurBg: t2.bg, secteurChevRotate: t2.chev,
+      objectifsColor: t3.color, objectifsBg: t3.bg, objectifsChevRotate: t3.chev,
+      aproposColor: t4.color, aproposBg: t4.bg, aproposChevRotate: t4.chev,
+      wrapPointerEvents: active ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+  var nav = document.querySelector('.home-nav');
+  if(!nav) return;
+  function onScroll(){
+    if(window.scrollY > 40){ nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.situation-card');
+  if(!cards.length) return;
+  function update(){
+    var vh = window.innerHeight;
+    cards.forEach(function(card){
+      var r = card.getBoundingClientRect();
+      if(r.bottom <= 0){
+        card.classList.remove('in-view');
+        card.classList.add('out-view');
+      } else if(r.top < vh * 0.85){
+        card.classList.remove('out-view');
+        card.classList.add('in-view');
+      } else {
+        card.classList.remove('in-view', 'out-view');
+      }
+    });
+  }
+  function onScroll(){
+    update();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>
